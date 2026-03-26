@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>직제와 사람들</title>
+  <style>
+    :root{--bg:#f5f3ee;--ink:#1e1f1c;--muted:#6c6f66;--line:#d8d3c7;--card:#fbfaf6;--accent:#2f5d50}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
+    .hero{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+    .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+    h1{font-size:52px;line-height:1.05;letter-spacing:-.04em;margin:10px 0 12px}
+    .lead{max-width:760px;color:var(--muted);font-size:18px}
+    .meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:14px}
+    .section{padding:32px 0;border-bottom:1px solid var(--line)}
+    .section h2{font-size:26px;letter-spacing:-.03em;margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);padding:18px;border-radius:14px}
+    .card h3{margin:0 0 8px;font-size:20px}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:3px 8px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted);margin-right:6px}
+    ul{margin:10px 0 0 18px;padding:0}
+    .cluster{background:#f0eee7;border-left:4px solid var(--accent);padding:18px 18px 18px 20px;border-radius:8px}
+    .small{font-size:14px}
+    .footer{padding-top:24px;color:var(--muted);font-size:14px}
+    @media (max-width: 760px){ h1{font-size:36px}.grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Jikje & People</div>
+      <h1>직제의 날줄 위로<br>사람의 씨줄을 읽습니다</h1>
+      <p class="lead">관보 인사발령, 직제 시행규칙, 직제 연혁을 함께 읽어 교육부 상층 라인과 부처 간 기능 이동을 추적하는 정적 아카이브 MVP입니다.</p>
+      <div class="meta">
+        <div>현재 대상: <strong>교육부</strong></div>
+        <div>핵심 라인: <strong>5개</strong></div>
+        <div>핵심 이벤트: <strong>2025-12-08 → 2026-01-01</strong></div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>현재 라인 맵</h2>
+      <div id="line-grid" class="grid"></div>
+    </section>
+
+    <section class="section">
+      <h2>핵심 상층 개편 클러스터</h2>
+      <div id="cluster" class="cluster"></div>
+    </section>
+
+    <section class="section">
+      <h2>라인별 해석</h2>
+      <div id="analysis" class="grid"></div>
+    </section>
+
+    <div class="footer">초안 데이터 출처: 법제처 OPEN API, 관보 인사발령 PDF 파싱 결과. 현재는 교육부 MVP만 반영.</div>
+  </div>
+<script>
+async function loadJson(path){ const r = await fetch(path); return r.json(); }
+function esc(s){ return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+(async () => {
+  const [analysis, lineMap, cluster] = await Promise.all([
+    loadJson('./data/moe-warp-weft-analysis.v5.json'),
+    loadJson('./data/moe-line-map.v1.json'),
+    loadJson('./data/moe-upper-line-reform-cluster-2025-12_to_2026-01.json')
+  ]);
+
+  document.getElementById('line-grid').innerHTML = [
+    ...(lineMap.linkedLines || []).map(line => `
+      <article class="card">
+        <h3>${esc(line.lineId)}</h3>
+        <div class="pill">strength ${esc(line.strength)}</div>
+        <div class="pill">key ${esc(line.keyPerson)}</div>
+        <p class="muted small">${esc(line.reading)}</p>
+      </article>`),
+    ...((lineMap.crossMinistryLines || []).map(line => `
+      <article class="card">
+        <h3>${esc(line.lineId)}</h3>
+        <div class="pill">cross-ministry</div>
+        <div class="pill">${esc(line.strength)}</div>
+        <div class="pill">key ${esc(line.keyPerson)}</div>
+        <p class="muted small">${esc(line.reading)}</p>
+      </article>`))
+  ].join('');
+
+  document.getElementById('cluster').innerHTML = `
+    <div class="pill">${esc(cluster.type)}</div>
+    <div class="pill">confidence ${esc(cluster.assessment.confidence)}</div>
+    <p>${esc(cluster.coreNarrative.join(' '))}</p>
+    <ul>${cluster.corePeople.map(p => `<li><strong>${esc(p.person)}</strong> — ${esc(p.sequence.join(' → '))}</li>`).join('')}</ul>
+  `;
+
+  document.getElementById('analysis').innerHTML = analysis.map(line => `
+    <article class="card">
+      <h3>${esc(line.currentPositionTitle)}</h3>
+      <div class="pill">${esc(line.lineId)}</div>
+      <div class="pill">confidence ${esc(line.assessment.confidence)}</div>
+      <div class="pill">${esc(line.assessment.connectionType)}</div>
+      <p class="muted small">${esc(line.assessment.rationale)}</p>
+      <ul>
+        ${(line.weft_people_evidence || []).map(p => `<li><strong>${esc(p.person)}</strong>: ${esc(p.interpretation)}</li>`).join('')}
+      </ul>
+    </article>`).join('');
+})();
+</script>
+</body>
+</html>
