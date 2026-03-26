@@ -2,6 +2,12 @@
 
 관보 인사발령, 직제 시행규칙, 직제 연혁을 함께 읽어 조직의 날줄과 사람의 씨줄을 엮어보는 정적 아카이브 실험입니다.
 
+## 페이지
+- https://hosungseo.github.io/jikje-and-people/
+
+## 저장소
+- https://github.com/hosungseo/jikje-and-people
+
 ## 현재 범위
 - 교육부 MVP
 - 핵심 라인 5개
