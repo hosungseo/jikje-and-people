@@ -14,7 +14,13 @@
 - 상층 개편 이벤트: 2025-12-08 → 2026-01-01
 - 영유아정책 라인: 복지부 → 교육부 기능 이동선으로 해석
 
-## 데이터
+## 현재 데이터 상태
+- people: 26
+- transitions: 28
+- positions: 47
+- 남은 zero-flow master positions: 인공지능인재지원국장 / 학생지원국장 / 국제교육기획관
+
+## 공개 페이지가 읽는 핵심 데이터
 - `data/moe-warp-weft-analysis.v5.json`
 - `data/moe-line-map.v1.json`
 - `data/moe-upper-line-reform-cluster-2025-12_to_2026-01.json`
