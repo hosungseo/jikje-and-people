@@ -1,0 +1,19 @@
+{
+  "name": "send-ielts-nudge",
+  "title": "IELTS 학습 넛지",
+  "kind": "scheduled",
+  "status": "active",
+  "schedule": {
+    "type": "cron",
+    "expr": "30 7,12,21 * * *",
+    "timezone": "Asia/Seoul"
+  },
+  "inputs": ["ielts-notes", "learning-history", "chunk-bank"],
+  "outputs": ["telegram-message", "study-log"],
+  "owner": "seohoseong",
+  "safety": {
+    "external_send": true,
+    "destructive": false,
+    "requires_confirmation": false
+  }
+}

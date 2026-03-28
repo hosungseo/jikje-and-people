@@ -1,0 +1,19 @@
+{
+  "name": "send-assembly-briefing",
+  "title": "국회 일정 브리핑",
+  "kind": "scheduled",
+  "status": "active",
+  "schedule": {
+    "type": "cron",
+    "expr": "0 8 * * *",
+    "timezone": "Asia/Seoul"
+  },
+  "inputs": ["open-assembly", "gazette", "naver-news"],
+  "outputs": ["telegram-briefing", "markdown-summary"],
+  "owner": "seohoseong",
+  "safety": {
+    "external_send": true,
+    "destructive": false,
+    "requires_confirmation": false
+  }
+}

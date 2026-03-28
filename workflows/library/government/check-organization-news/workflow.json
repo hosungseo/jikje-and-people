@@ -1,0 +1,19 @@
+{
+  "name": "check-organization-news",
+  "title": "조직 관련 뉴스 모니터링",
+  "kind": "scheduled",
+  "status": "active",
+  "schedule": {
+    "type": "cron",
+    "expr": "0 9 * * 1-5",
+    "timezone": "Asia/Seoul"
+  },
+  "inputs": ["naver-news", "government-news", "org-notes"],
+  "outputs": ["telegram-briefing", "markdown-note"],
+  "owner": "seohoseong",
+  "safety": {
+    "external_send": true,
+    "destructive": false,
+    "requires_confirmation": false
+  }
+}
