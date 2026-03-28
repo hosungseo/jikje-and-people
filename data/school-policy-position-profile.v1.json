@@ -1,0 +1,157 @@
+{
+  "positionId": "moe-chief-school-policy",
+  "currentTitle": "학교정책실장",
+  "positionQuestion": "학교정책실장 축에는 지금까지 누가 왔고, 그 사람은 어떤 보직을 거쳐왔는가?",
+  "interpretation": {
+    "type": "reorganized-successor-position-line",
+    "confidence": "high",
+    "summary": "학교정책실장 축은 학교정책실장 → 학교혁신지원실장 → 책임교육정책실장 → 학교정책실장으로 이어지는 재편형 직위 계보로 읽는 것이 적절하다."
+  },
+  "titleHistory": [
+    {
+      "year": "2016",
+      "observedTitle": "학교정책실장",
+      "note": "학교정책실 체제",
+      "evidence": {
+        "efDate": "2016-12-29",
+        "annNo": "제00114호",
+        "article": "제6조",
+        "officeTitle": "학교정책실",
+        "excerpt": "제6조(학교정책실) ① 학교정책실장 및 교육과정정책관은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    },
+    {
+      "year": "2018",
+      "observedTitle": "학교혁신지원실장",
+      "note": "학교혁신지원실 체제",
+      "evidence": {
+        "efDate": "2018-12-31",
+        "annNo": "제00167호",
+        "article": "제7조",
+        "officeTitle": "학교혁신지원실",
+        "excerpt": "제7조(학교혁신지원실) ① 학교혁신지원실장 및 교육과정정책관은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    },
+    {
+      "year": "2021",
+      "observedTitle": "학교혁신지원실장",
+      "note": "학교혁신지원실 체제 유지",
+      "evidence": {
+        "efDate": "2021-12-30",
+        "annNo": "제00254호",
+        "article": "제7조",
+        "officeTitle": "학교혁신지원실",
+        "excerpt": "제7조(학교혁신지원실) ① 학교혁신지원실장은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    },
+    {
+      "year": "2023",
+      "observedTitle": "책임교육정책실장",
+      "note": "책임교육정책실 체제 전환",
+      "evidence": {
+        "efDate": "2023-08-30",
+        "annNo": "제00308호",
+        "article": "제7조",
+        "officeTitle": "책임교육정책실",
+        "excerpt": "제7조(책임교육정책실) ① 책임교육정책실장은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    },
+    {
+      "year": "2024",
+      "observedTitle": "책임교육정책실장",
+      "note": "책임교육정책실 체제 유지",
+      "evidence": {
+        "efDate": "2024-06-27",
+        "annNo": "제00332호",
+        "article": "제7조",
+        "officeTitle": "책임교육정책실",
+        "excerpt": "제7조(책임교육정책실) ① 책임교육정책실장은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    },
+    {
+      "year": "2025",
+      "observedTitle": "책임교육정책실장",
+      "note": "책임교육정책실 체제 유지",
+      "evidence": {
+        "efDate": "2025-10-01",
+        "annNo": "제00368호",
+        "article": "제7조",
+        "officeTitle": "책임교육정책실",
+        "excerpt": "제7조(책임교육정책실) ① 책임교육정책실장은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    },
+    {
+      "year": "2026",
+      "observedTitle": "학교정책실장",
+      "note": "학교정책실장 명칭 복귀",
+      "evidence": {
+        "efDate": "2026-02-19",
+        "annNo": "제00375호",
+        "article": "제7조",
+        "officeTitle": "학교정책실",
+        "excerpt": "제7조(학교정책실) ① 학교정책실장은 장학관 또는 고위공무원단에 속하는 일반직공무원으로 보하되..."
+      }
+    }
+  ],
+  "knownPeople": [
+    {
+      "personId": "person-고영종",
+      "personName": "고영종",
+      "roleInLine": "confirmed-occupant",
+      "knownPositionTitle": "책임교육정책실장",
+      "evidenceType": "gazette-dismissal",
+      "date": "2025-03-28",
+      "sourcePdf": "25_20250321.pdf",
+      "evidenceSummary": "교육부 책임교육정책실장 일반직고위공무원 고영종이 2025-03-28 국가공무원법 제74조의2에 따라 그 직을 면함",
+      "path": [
+        {
+          "date": "2025-03-28",
+          "fromRaw": "교육부 책임교육정책실장",
+          "toRaw": "면직",
+          "normalizationStatus": "raw-confirmed"
+        }
+      ]
+    },
+    {
+      "personId": "person-장홍재",
+      "personName": "장홍재",
+      "roleInLine": "current-occupant",
+      "knownPositionTitle": "학교정책실장",
+      "evidenceType": "gazette-transition-chain",
+      "date": "2026-01-01",
+      "sourcePdf": "1_20260319.pdf",
+      "evidenceSummary": "장홍재가 2025-11-05 책임교육정책실장에 보임된 뒤 2026-01-01 학교정책실장으로 이동",
+      "path": [
+        {
+          "date": "2025-11-05",
+          "fromRaw": "바른초등학교 교장",
+          "toRaw": "교육부 책임교육정책실장",
+          "sourcePdf": "3_20251117.pdf",
+          "normalizationStatus": "mapped"
+        },
+        {
+          "date": "2026-01-01",
+          "fromRaw": "교육부 책임교육정책실장",
+          "toRaw": "교육부 학교정책실장",
+          "sourcePdf": "1_20260319.pdf",
+          "normalizationStatus": "mapped"
+        }
+      ]
+    }
+  ],
+  "currentKnownOccupant": {
+    "personId": "person-장홍재",
+    "personName": "장홍재",
+    "asOf": "2026-01-01",
+    "confidence": "high"
+  },
+  "knownGaps": [
+    "2016~2023 구간의 학교정책실장/학교혁신지원실장 실명 occupant는 현재 관보 코퍼스 범위 밖이라 아직 비어 있음.",
+    "현재는 최근 관보 코퍼스 기준으로 고영종, 장홍재 두 사람만 확정적으로 이 축에 연결됨."
+  ],
+  "sources": [
+    "data/raw/moe-position-history-compare.json",
+    "data/curated/moves-normalized.education.v2.json",
+    "data/curated/moe-warp-weft-analysis.v5.json"
+  ]
+}

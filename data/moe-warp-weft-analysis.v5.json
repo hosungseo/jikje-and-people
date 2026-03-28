@@ -1,0 +1,359 @@
+[
+  {
+    "lineId": "moe-school-policy-line",
+    "currentPositionId": "moe-chief-school-policy",
+    "currentPositionTitle": "학교정책실장",
+    "warp_history_evidence": [
+      {
+        "year": "2016",
+        "observedTitle": "학교정책관",
+        "strength": "medium"
+      },
+      {
+        "year": "2018",
+        "observedTitle": "학교혁신지원실장",
+        "strength": "medium"
+      },
+      {
+        "year": "2021",
+        "observedTitle": "학교혁신지원실장",
+        "strength": "medium"
+      },
+      {
+        "year": "2023",
+        "observedTitle": "책임교육정책실장",
+        "strength": "strong"
+      },
+      {
+        "year": "2024",
+        "observedTitle": "책임교육정책실장",
+        "strength": "strong"
+      },
+      {
+        "year": "2025",
+        "observedTitle": "책임교육정책실장",
+        "strength": "strong"
+      },
+      {
+        "year": "2026",
+        "observedTitle": "학교정책실장",
+        "strength": "strong"
+      }
+    ],
+    "weft_people_evidence": [
+      {
+        "person": "장홍재",
+        "path": [
+          {
+            "person": "장홍재",
+            "date": "2025-11-05",
+            "fromRaw": "바른초등학교 교장",
+            "toRaw": "교육부 책임교육정책실장",
+            "fromPositionId": "ext-bareun-elementary-principal",
+            "toPositionId": "moe-chief-responsible-education-policy",
+            "sourcePdf": "3_20251117.pdf",
+            "sourceType": "gazette",
+            "rawText": "바른초등학교 교장 장홍재(張弘在) 장학관에 임함 교육부 책임교육정책실장에 보함",
+            "normalizationStatus": "mapped"
+          },
+          {
+            "person": "장홍재",
+            "date": "2026-01-01",
+            "fromRaw": "교육부 책임교육정책실장",
+            "toRaw": "교육부 학교정책실장",
+            "fromPositionId": "moe-chief-responsible-education-policy",
+            "toPositionId": "moe-chief-school-policy",
+            "sourcePdf": "1_20260319.pdf",
+            "sourceType": "gazette",
+            "rawText": "교육부 책임교육정책실장 장학관 장홍재(張弘在) 교육부 학교정책실장에 보함",
+            "normalizationStatus": "mapped"
+          }
+        ],
+        "interpretation": "같은 자연인이 2025-11-05 책임교육정책실장, 2026-01-01 학교정책실장으로 이어져 개편 후속 직위 가능성을 강하게 시사"
+      }
+    ],
+    "assessment": {
+      "connectionType": "reorganized-successor",
+      "confidence": "high",
+      "rationale": "직제 연혁상 2023~2025 책임교육정책실장 축이 확인되고, 동일 인물 장홍재가 2026-01-01 학교정책실장으로 이어짐"
+    },
+    "linkedClusters": [
+      {
+        "clusterId": "moe-upper-line-reform-cluster-2025-12_to_2026-01",
+        "role": "core-line-evidence",
+        "people": [
+          "장홍재"
+        ],
+        "evidence": "2026-01-01 장홍재가 책임교육정책실장→학교정책실장으로 이동하여 개편 후속 안착을 직접 보여줌"
+      }
+    ]
+  },
+  {
+    "lineId": "moe-student-support-line",
+    "currentPositionId": "moe-chief-student-support-bureau",
+    "currentPositionTitle": "학생지원국장",
+    "warp_history_evidence": [
+      {
+        "year": "2016",
+        "observedTitle": "학생복지정책관",
+        "strength": "low"
+      },
+      {
+        "year": "2018",
+        "observedTitle": "교육안전정보국장",
+        "strength": "medium"
+      },
+      {
+        "year": "2021",
+        "observedTitle": "교육안전정보국장",
+        "strength": "medium"
+      },
+      {
+        "year": "2025",
+        "observedTitle": "학생건강정책국장",
+        "strength": "medium"
+      },
+      {
+        "year": "2026",
+        "observedTitle": "학생지원국장",
+        "strength": "strong"
+      }
+    ],
+    "weft_people_evidence": [
+      {
+        "person": "이해숙",
+        "path": [
+          {
+            "person": "이해숙",
+            "date": "2025-12-08",
+            "fromRaw": "교육부 학생건강정책국장",
+            "toRaw": "교육부 인재정책실장",
+            "fromPositionId": "moe-chief-student-health-safety-bureau",
+            "toPositionId": "moe-chief-talent-policy",
+            "sourcePdf": "2_20251215.pdf",
+            "sourceType": "gazette",
+            "rawText": "교육부 학생건강정책국장 일반직고위공무원 이해숙(李海淑) 교육부 인재정책실장에 보함",
+            "normalizationStatus": "mapped"
+          },
+          {
+            "person": "이해숙",
+            "date": "2026-01-01",
+            "fromRaw": "교육부 인재정책실장",
+            "toRaw": "교육부 고등평생정책실장",
+            "fromPositionId": "moe-chief-talent-policy",
+            "toPositionId": "moe-chief-higher-lifelong-policy",
+            "sourcePdf": "1_20260319.pdf",
+            "sourceType": "gazette",
+            "rawText": "교육부 인재정책실장 일반직고위공무원 이해숙(李海淑) 교육부 고등평생정책실장에 보함",
+            "normalizationStatus": "mapped"
+          }
+        ],
+        "interpretation": "학생건강정책국장 출신이 인재정책실장, 고등평생정책실장으로 이동한 경로는 학생지원/학생건강 라인이 상위 정책라인과 연결되는 인사 흐름을 시사하지만 학생지원국장 직접 승계 증거는 아직 아님"
+      }
+    ],
+    "assessment": {
+      "connectionType": "probable-lineage",
+      "confidence": "medium",
+      "rationale": "조문상 학생복지·교육안전·학생건강 계열 축이 이어지나, 동일 자연인이 학생지원국장으로 직결되는 강한 씨줄 증거는 아직 부족"
+    },
+    "linkedClusters": [
+      {
+        "clusterId": "moe-upper-line-reform-cluster-2025-12_to_2026-01",
+        "role": "upstream-line-evidence",
+        "people": [
+          "이해숙"
+        ],
+        "evidence": "이해숙이 학생건강정책국장에서 인재정책실장으로 이동해 학생지원/학생건강 라인이 상층 정책라인과 연결됨을 시사"
+      }
+    ]
+  },
+  {
+    "lineId": "moe-higher-lifelong-policy-line",
+    "currentPositionId": "moe-chief-higher-lifelong-policy",
+    "currentPositionTitle": "고등평생정책실장",
+    "warp_history_evidence": [
+      {
+        "year": "2016",
+        "observedTitle": "대학정책실장",
+        "strength": "medium"
+      },
+      {
+        "year": "2018",
+        "observedTitle": "고등교육정책실장",
+        "strength": "medium"
+      },
+      {
+        "year": "2021",
+        "observedTitle": "평생직업교육국장",
+        "strength": "low"
+      },
+      {
+        "year": "2026",
+        "observedTitle": "고등평생정책실장",
+        "strength": "strong"
+      }
+    ],
+    "weft_people_evidence": [
+      {
+        "person": "이해숙",
+        "path": [
+          {
+            "person": "이해숙",
+            "date": "2025-12-08",
+            "fromRaw": "교육부 학생건강정책국장",
+            "toRaw": "교육부 인재정책실장",
+            "fromPositionId": "moe-chief-student-health-safety-bureau",
+            "toPositionId": "moe-chief-talent-policy",
+            "sourcePdf": "2_20251215.pdf",
+            "sourceType": "gazette",
+            "rawText": "교육부 학생건강정책국장 일반직고위공무원 이해숙(李海淑) 교육부 인재정책실장에 보함",
+            "normalizationStatus": "mapped"
+          },
+          {
+            "person": "이해숙",
+            "date": "2026-01-01",
+            "fromRaw": "교육부 인재정책실장",
+            "toRaw": "교육부 고등평생정책실장",
+            "fromPositionId": "moe-chief-talent-policy",
+            "toPositionId": "moe-chief-higher-lifelong-policy",
+            "sourcePdf": "1_20260319.pdf",
+            "sourceType": "gazette",
+            "rawText": "교육부 인재정책실장 일반직고위공무원 이해숙(李海淑) 교육부 고등평생정책실장에 보함",
+            "normalizationStatus": "mapped"
+          }
+        ],
+        "interpretation": "학생건강정책국장 출신 이해숙이 2025-12-08 인재정책실장, 2026-01-01 고등평생정책실장으로 이어져, 개편 직후 상층 정책라인으로 승계되는 인사 흐름을 보여줌"
+      }
+    ],
+    "assessment": {
+      "connectionType": "reframed-successor-line",
+      "confidence": "medium",
+      "rationale": "날줄상 대학정책/고등교육/평생직업교육 축이 현행 고등평생정책실장으로 재편된 정황이 있으나, 동일 자연인의 직접 predecessor 연속성은 인재정책실장을 경유해 나타나므로 학교정책 라인만큼 강한 직결 승계는 아님"
+    },
+    "linkedClusters": [
+      {
+        "clusterId": "moe-upper-line-reform-cluster-2025-12_to_2026-01",
+        "role": "core-line-evidence",
+        "people": [
+          "이해숙"
+        ],
+        "evidence": "2025-12-08 이해숙 인재정책실장 이동, 2026-01-01 고등평생정책실장 안착으로 상층 재편-안착 흐름을 형성"
+      }
+    ]
+  },
+  {
+    "lineId": "moe-ai-talent-support-line",
+    "currentPositionId": "moe-chief-ai-talent-support-bureau",
+    "currentPositionTitle": "인공지능인재지원국장",
+    "warp_history_evidence": [
+      {
+        "year": "2016",
+        "observedTitle": "교육안전정보국장",
+        "strength": "low"
+      },
+      {
+        "year": "2018",
+        "observedTitle": "교육안전정보국장",
+        "strength": "low"
+      },
+      {
+        "year": "2021",
+        "observedTitle": "교육안전정보국장",
+        "strength": "low"
+      },
+      {
+        "year": "2023",
+        "observedTitle": "인재정책기획관",
+        "strength": "medium"
+      },
+      {
+        "year": "2024",
+        "observedTitle": "인재정책기획관",
+        "strength": "medium"
+      },
+      {
+        "year": "2025",
+        "observedTitle": "인재정책기획관",
+        "strength": "medium"
+      },
+      {
+        "year": "2026",
+        "observedTitle": "인공지능인재지원국장",
+        "strength": "strong"
+      }
+    ],
+    "weft_people_evidence": [
+      {
+        "person": "(current occupant not yet fixed)",
+        "path": [],
+        "interpretation": "아직 현 점유자와 직전 보직을 확정하지 못해 씨줄 증거는 약함. 따라서 같은 자연인 연속성보다 기능 재편 관점으로 읽는 것이 적절함"
+      }
+    ],
+    "assessment": {
+      "connectionType": "recent-functional-recomposition",
+      "confidence": "low-medium",
+      "rationale": "현행 직위는 매우 최근 신설 성격이 강하고, 1:1 predecessor보다는 교육안전정보·인재정책기획 축의 기능이 재구성된 결과로 보는 편이 자연스러움"
+    },
+    "linkedClusters": [
+      {
+        "clusterId": "moe-upper-line-reform-cluster-2025-12_to_2026-01",
+        "role": "context-only",
+        "people": [],
+        "evidence": "현재 상층 재편 클러스터와 직접 연결되는 자연인 증거는 약함. 동시기 교육부 상층 개편의 배경 맥락으로만 참고"
+      }
+    ]
+  },
+  {
+    "lineId": "moe-young-childhood-policy-line",
+    "currentPositionId": "moe-chief-early-childhood-policy-bureau",
+    "currentPositionTitle": "영유아정책국장",
+    "warp_history_evidence": [
+      {
+        "year": "2024",
+        "observedTitle": "보건복지부 보육정책관",
+        "strength": "high",
+        "scope": "mohw"
+      },
+      {
+        "year": "2024",
+        "observedTitle": "교육부 영유아정책국",
+        "strength": "high",
+        "scope": "moe"
+      },
+      {
+        "year": "2026",
+        "observedTitle": "정부조직법 제32조 교육부 사무에 영ㆍ유아 보육ㆍ교육 명시",
+        "strength": "high",
+        "scope": "gov-org"
+      }
+    ],
+    "weft_people_evidence": [
+      {
+        "person": "강민규",
+        "path": [
+          {
+            "date": "2024-06-27",
+            "fromRaw": "보건복지부 인구정책실 보육정책관",
+            "toRaw": "교육부 영유아정책국장"
+          }
+        ],
+        "interpretation": "복지부 보육정책 기능을 담당하던 자연인이 교육부 영유아정책국장으로 이동하여 부처 간 기능 이동의 강한 씨줄 근거를 제공"
+      }
+    ],
+    "assessment": {
+      "connectionType": "cross-ministry-functional-transfer",
+      "confidence": "high-minus",
+      "rationale": "정부조직법상 교육부 소관에 영ㆍ유아 보육ㆍ교육이 명시되고, 복지부 보육정책관 축과 교육부 영유아정책국 축이 강민규 이동으로 직접 연결됨"
+    },
+    "linkedClusters": [
+      {
+        "clusterId": "young-childhood-cross-ministry-transfer-2024-06",
+        "role": "core-line-evidence",
+        "people": [
+          "강민규"
+        ],
+        "evidence": "2024-06-27 강민규가 보건복지부 인구정책실 보육정책관에서 교육부 영유아정책국장으로 이동"
+      }
+    ]
+  }
+]

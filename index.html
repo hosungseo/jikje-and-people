@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>직제와 사람들 — 학교정책실장</title>
+  <style>
+    :root{
+      --bg:#f4f1e8;
+      --paper:#fbf8f2;
+      --paper-2:#f7f1e6;
+      --ink:#171714;
+      --muted:#67685e;
+      --line:#d9d1c0;
+      --accent:#244a42;
+      --accent-soft:#dce8e4;
+      --warm:#8b6041;
+      --shadow:0 18px 40px rgba(24,24,20,.08);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#efebe2 0%, #f4f1e8 16%, #f7f4ee 100%);
+      color:var(--ink);
+      font:16px/1.6 -apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+    }
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px 80px}
+    .hero{
+      min-height:100svh;
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:42px;
+      align-items:end;
+      padding:28px 0 42px;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)
+    }
+    .eyebrow::before{content:"";display:block;width:36px;height:1px;background:var(--accent)}
+    h1{
+      margin:14px 0 16px;
+      font-size:clamp(52px,7vw,100px);
+      line-height:.94;
+      letter-spacing:-.06em;
+      max-width:8.2ch;
+    }
+    .lead{margin:0;max-width:36rem;color:var(--muted);font-size:18px}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px;max-width:760px}
+    .hero-stat{padding:14px 0 10px;border-top:1px solid rgba(23,23,20,.16)}
+    .hero-stat strong{display:block;font-size:28px;letter-spacing:-.03em}
+    .hero-stat span{display:block;font-size:13px;color:var(--muted)}
+    .hero-side{
+      align-self:stretch;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      min-height:620px;
+      background:linear-gradient(180deg, rgba(36,74,66,.06), rgba(36,74,66,.12)), var(--paper);
+      border:1px solid rgba(36,74,66,.14);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;overflow:hidden;
+    }
+    .hero-side::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 84% 18%, rgba(36,74,66,.16), transparent 28%), radial-gradient(circle at 18% 84%, rgba(139,96,65,.12), transparent 26%);
+      pointer-events:none;
+    }
+    .hero-side h2{margin:0 0 10px;font-size:30px;line-height:1.06;letter-spacing:-.04em;max-width:11ch}
+    .hero-side p{margin:0;color:var(--muted)}
+    .chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(23,23,20,.08);font-size:12px;color:var(--muted)}
+
+    .section{padding:34px 0;border-top:1px solid rgba(23,23,20,.08)}
+    .section-head{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:end;margin-bottom:20px}
+    .kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    h2.section-title{margin:0;font-size:clamp(28px,3vw,44px);line-height:1.03;letter-spacing:-.05em}
+    .section-desc{margin:0;color:var(--muted);max-width:38rem}
+
+    .timeline-card,.person-card,.path-card,.note-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+    .history-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+    .history-step{padding:16px 14px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+    .history-step b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .history-step strong{display:block;font-size:18px;line-height:1.12;letter-spacing:-.03em}
+    .history-step span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+
+    .people-layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:22px;align-items:start}
+    .people-list{display:grid;gap:12px}
+    .person-button{
+      width:100%;text-align:left;border:none;cursor:pointer;color:inherit;
+      background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow);transition:.18s ease;
+    }
+    .person-button:hover{transform:translateY(-1px)}
+    .person-button.active{background:var(--accent);color:#f5f5f1;border-color:rgba(36,74,66,.45)}
+    .person-button strong{display:block;font-size:22px;letter-spacing:-.03em}
+    .person-button span{display:block;font-size:14px;opacity:.82;margin-top:4px}
+    .person-button small{display:block;font-size:12px;opacity:.68;margin-top:10px}
+
+    .person-panel{padding:26px}
+    .person-top{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}
+    .person-title{margin:0 0 8px;font-size:42px;line-height:.96;letter-spacing:-.05em}
+    .person-sub{margin:0;color:var(--muted)}
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;background:#fff;color:var(--muted)}
+    .pill.high{background:#e5eee9;color:var(--accent);border-color:#bfd2ca}
+    .snapshot{padding:18px;border-radius:20px;background:var(--paper-2);border:1px solid rgba(23,23,20,.08)}
+    .snapshot h3{margin:0 0 8px;font-size:16px;letter-spacing:-.02em}
+    .snapshot p{margin:0;color:var(--muted);font-size:14px}
+    .path-card{padding:18px;margin-top:24px}
+    .path-card h3{margin:0 0 12px;font-size:20px;letter-spacing:-.03em}
+    .path-steps{display:grid;gap:10px}
+    .path-step{padding-left:14px;position:relative}
+    .path-step::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:999px;background:var(--accent)}
+    .path-step strong{display:block;font-size:15px}
+    .path-step span{display:block;color:var(--muted);font-size:13px}
+
+    .notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .note-card{padding:20px}
+    .note-card h3{margin:0 0 12px;font-size:20px;letter-spacing:-.03em}
+    .note-card ul{margin:0 0 0 18px;padding:0}
+    .note-card li+li{margin-top:8px}
+    .footer{margin-top:26px;padding-top:18px;border-top:1px solid rgba(23,23,20,.08);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(23,23,20,.25)}
+
+    @media (max-width: 1040px){
+      .hero,.section-head,.people-layout,.person-top,.notes-grid{grid-template-columns:1fr}
+      .hero{min-height:auto;padding-top:24px}
+      .hero-side{min-height:auto}
+      .history-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 760px){
+      .wrap{padding:0 16px 64px}
+      h1{font-size:52px;max-width:7.5ch}
+      .hero-stats,.history-grid{grid-template-columns:1fr}
+      .person-title{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Jikje &amp; People / Position-first pilot</div>
+        <h1>학교정책실장이라는 자리에<br>누가 왔었는가</h1>
+        <p class="lead">이 시범판은 교육부 고위직 중 하나인 <strong>학교정책실장</strong>만 떼어 놓고 봅니다. 먼저 이 자리가 직제 시행규칙 연혁에서 어떻게 이름과 구조를 바꿔 왔는지 보고, 그다음 현재 코퍼스에서 확인된 사람과 그 사람의 직전 경로를 붙입니다.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong id="stat-current"></strong><span>현재 확인된 점유자</span></div>
+          <div class="hero-stat"><strong id="stat-people"></strong><span>현재 코퍼스에서 확인된 사람</span></div>
+          <div class="hero-stat"><strong id="stat-confidence"></strong><span>이 직위 계보 해석 confidence</span></div>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <h2>핵심 질문은<br>직위 하나를 깊게 읽는 것입니다</h2>
+        <p id="hero-summary"></p>
+        <div class="chip-row">
+          <span class="chip">position-first</span>
+          <span class="chip">history first</span>
+          <span class="chip">person path second</span>
+        </div>
+      </aside>
+    </header>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Title history</div>
+          <h2 class="section-title">학교정책실장 축은 어떻게 변해왔는가</h2>
+        </div>
+        <p class="section-desc">여기서는 현행 명칭만 보는 대신, 직제 시행규칙 연혁에서 같은 축으로 읽히는 명칭 변화를 한 줄로 둡니다. 이걸 먼저 봐야 그 자리에 누가 왔는지 제대로 읽을 수 있습니다.</p>
+      </div>
+      <div id="history-grid" class="history-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">People on the position-line</div>
+          <h2 class="section-title">현재까지 확인된 사람</h2>
+        </div>
+        <p class="section-desc">지금은 관보 코퍼스 범위상 최근 구간 중심으로만 사람이 잡힙니다. 그래서 이 화면도 “역대 완성본”이 아니라, 현재까지 확인된 사람을 점층적으로 쌓는 형태로 설계했습니다.</p>
+      </div>
+      <div class="people-layout">
+        <aside id="people-list" class="people-list"></aside>
+        <section class="person-card person-panel">
+          <div class="person-top">
+            <div>
+              <h2 id="person-title" class="person-title"></h2>
+              <p id="person-sub" class="person-sub"></p>
+              <div id="person-pills" class="pill-row"></div>
+            </div>
+            <div class="snapshot">
+              <h3>근거 요약</h3>
+              <p id="person-summary"></p>
+            </div>
+          </div>
+          <div class="path-card">
+            <h3>현재까지 확인된 경로</h3>
+            <div id="path-steps" class="path-steps"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Known gaps</div>
+          <h2 class="section-title">지금 비어 있는 구간</h2>
+        </div>
+        <p class="section-desc">이 프로젝트는 한 번에 모든 이름을 다 채우기보다, 비어 있는 구간을 드러낸 뒤 코퍼스를 더 보강하는 방식으로 가는 것이 맞습니다.</p>
+      </div>
+      <div class="notes-grid">
+        <article class="note-card">
+          <h3>현재 공백</h3>
+          <ul id="gaps-list"></ul>
+        </article>
+        <article class="note-card">
+          <h3>다음으로 캐야 할 구간</h3>
+          <ul>
+            <li>2016~2023 시기의 학교정책실장 / 학교혁신지원실장 실명 occupant</li>
+            <li>학교혁신지원실장 시기 보임·전보 관보 원문</li>
+            <li>책임교육정책실장 축의 장홍재 이전 occupant 추가 확보</li>
+          </ul>
+        </article>
+      </div>
+      <div class="footer">
+        <div>출처: 직제 시행규칙 연혁 비교 + 관보 인사발령 원문 파싱. 현재는 학교정책실장 1개 직위 시범판.</div>
+        <div><a href="https://github.com/hosungseo/jikje-and-people" target="_blank" rel="noreferrer">GitHub repository</a></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    async function loadJson(path){ const r = await fetch(path); return r.json(); }
+    function esc(s){ return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    (async () => {
+      const data = await loadJson('./data/school-policy-position-profile.v1.json');
+
+      document.getElementById('stat-current').textContent = data.currentKnownOccupant.personName;
+      document.getElementById('stat-people').textContent = `${data.knownPeople.length}명`;
+      document.getElementById('stat-confidence').textContent = data.interpretation.confidence;
+      document.getElementById('hero-summary').textContent = data.interpretation.summary;
+
+      document.getElementById('history-grid').innerHTML = (data.titleHistory || []).map(item => `
+        <article class="history-step">
+          <b>${esc(item.year)}</b>
+          <strong>${esc(item.observedTitle)}</strong>
+          <span>${esc(item.note)}</span>
+        </article>
+      `).join('');
+
+      const listRoot = document.getElementById('people-list');
+      listRoot.innerHTML = (data.knownPeople || []).map((person, idx) => `
+        <button class="person-button ${idx===0 ? 'active' : ''}" data-person="${esc(person.personId)}">
+          <strong>${esc(person.personName)}</strong>
+          <span>${esc(person.knownPositionTitle)}</span>
+          <small>${esc(person.evidenceType)} · ${esc(person.date)}</small>
+        </button>
+      `).join('');
+
+      function renderPerson(personId){
+        const person = data.knownPeople.find(p => p.personId === personId) || data.knownPeople[0];
+        document.getElementById('person-title').textContent = person.personName;
+        document.getElementById('person-sub').textContent = `${person.knownPositionTitle} 축에서 현재까지 확인된 인물`;
+        document.getElementById('person-summary').textContent = person.evidenceSummary;
+        document.getElementById('person-pills').innerHTML = `
+          <span class="pill">${esc(person.roleInLine)}</span>
+          <span class="pill ${person.roleInLine.includes('current') ? 'high' : ''}">${esc(person.knownPositionTitle)}</span>
+          <span class="pill">${esc(person.sourcePdf || '')}</span>
+        `;
+        document.getElementById('path-steps').innerHTML = (person.path || []).map(step => `
+          <div class="path-step">
+            <strong>${esc(step.date)} · ${esc(step.fromRaw)} → ${esc(step.toRaw)}</strong>
+            <span>${esc(step.sourcePdf || '')} ${step.normalizationStatus ? '· ' + esc(step.normalizationStatus) : ''}</span>
+          </div>
+        `).join('');
+        document.querySelectorAll('.person-button').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.person === person.personId);
+        });
+      }
+
+      listRoot.addEventListener('click', (e) => {
+        const button = e.target.closest('.person-button');
+        if (!button) return;
+        renderPerson(button.dataset.person);
+      });
+
+      document.getElementById('gaps-list').innerHTML = (data.knownGaps || []).map(item => `<li>${esc(item)}</li>`).join('');
+      renderPerson(data.knownPeople[0].personId);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "clusterId": "moe-upper-line-reform-cluster-2025-12_to_2026-01",
+  "linkedLines": [
+    {
+      "lineId": "moe-school-policy-line",
+      "strength": "high",
+      "keyPerson": "장홍재",
+      "reading": "상층 개편 후속 배치가 학교정책 라인의 날줄/씨줄 해석을 직접 강화"
+    },
+    {
+      "lineId": "moe-higher-lifelong-policy-line",
+      "strength": "high",
+      "keyPerson": "이해숙",
+      "reading": "12/8 reshuffle와 1/1 placement를 함께 보면 고등평생정책 라인의 안착이 분명해짐"
+    },
+    {
+      "lineId": "moe-student-support-line",
+      "strength": "medium",
+      "keyPerson": "이해숙",
+      "reading": "학생건강/학생지원 계열에서 상층 정책라인으로의 이동 흔적을 제공하는 upstream evidence"
+    }
+  ],
+  "unlinkedOrWeakLines": [
+    {
+      "lineId": "moe-ai-talent-support-line",
+      "strength": "weak",
+      "reading": "현재 클러스터와 직접 연결되는 자연인 증거 부족"
+    }
+  ],
+  "crossMinistryLines": [
+    {
+      "lineId": "moe-young-childhood-policy-line",
+      "strength": "high-minus",
+      "keyPerson": "강민규",
+      "reading": "보건복지부 보육정책관→교육부 영유아정책국장 이동과 정부조직법상 소관 명시를 통해 부처 간 기능 이동선이 강하게 드러남"
+    }
+  ]
+}
